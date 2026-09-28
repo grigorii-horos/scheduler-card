@@ -386,6 +386,7 @@ export class SchedulerCard extends LitElement {
     }
     ha-card.full-height .card-content {
       flex: 1;
+      overflow-y: auto;
     }
     .card-header {
       display: flex;
