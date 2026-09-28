@@ -19,6 +19,7 @@ export interface CardConfig {
   tags?: string[] | string;
   exclude_tags?: string[] | string;
   show_add_button?: boolean;
+  auto_height?: boolean;
 }
 
 export enum EditorMode {

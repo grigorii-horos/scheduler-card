@@ -147,7 +147,7 @@ export class SchedulerCard extends LitElement {
       : includedItems.some(el => ['on', 'triggered'].includes(this.hass!.states[el.entity_id]?.state || ''));
 
     return html`
-      <ha-card>
+      <ha-card class=${this._config.auto_height ? '' : 'full-height'}>
         <div class="card-header">
           <div class="name">
             ${!isDefined(this._config.title) || (typeof this._config.title === 'boolean' && this._config.title)
@@ -379,6 +379,14 @@ export class SchedulerCard extends LitElement {
   }
 
   static styles = css`
+    ha-card.full-height {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    ha-card.full-height .card-content {
+      flex: 1;
+    }
     .card-header {
       display: flex;
       justify-content: space-between;
